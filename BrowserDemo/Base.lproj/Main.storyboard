@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BrowserDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JuV-3w-sjj">
+                                <rect key="frame" x="20" y="46" width="40" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11F-zh-4Bv">
+                                <rect key="frame" x="337" y="46" width="64" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Forword"/>
+                            </button>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TxH-Sl-0bN">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input URL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lJs-xp-m43">
+                                <rect key="frame" x="65" y="48" width="267" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="11F-zh-4Bv" firstAttribute="leading" secondItem="lJs-xp-m43" secondAttribute="trailing" constant="5" id="04c-wn-hO0"/>
+                            <constraint firstItem="TxH-Sl-0bN" firstAttribute="top" secondItem="11F-zh-4Bv" secondAttribute="bottom" constant="8" symbolic="YES" id="2qX-m3-ZxF"/>
+                            <constraint firstItem="JuV-3w-sjj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="2" id="8OZ-Z8-WOT"/>
+                            <constraint firstItem="TxH-Sl-0bN" firstAttribute="top" secondItem="JuV-3w-sjj" secondAttribute="bottom" constant="8" symbolic="YES" id="AHV-kd-Tms"/>
+                            <constraint firstItem="TxH-Sl-0bN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Ag1-2n-hVU"/>
+                            <constraint firstItem="lJs-xp-m43" firstAttribute="centerY" secondItem="JuV-3w-sjj" secondAttribute="centerY" id="EuZ-kH-zId"/>
+                            <constraint firstAttribute="trailing" secondItem="TxH-Sl-0bN" secondAttribute="trailing" id="Ip2-da-ZRC"/>
+                            <constraint firstItem="lJs-xp-m43" firstAttribute="leading" secondItem="JuV-3w-sjj" secondAttribute="trailing" constant="5" id="NHM-c0-Z6n"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="11F-zh-4Bv" secondAttribute="trailing" constant="13" id="YHL-Lf-vw9"/>
+                            <constraint firstItem="JuV-3w-sjj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fBJ-hL-54G"/>
+                            <constraint firstItem="JuV-3w-sjj" firstAttribute="top" secondItem="11F-zh-4Bv" secondAttribute="top" id="gfj-UZ-eud"/>
+                            <constraint firstItem="TxH-Sl-0bN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kvG-Ge-XQP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="11F-zh-4Bv" id="rZf-cq-pLD"/>
+                        <outlet property="forwardButton" destination="11F-zh-4Bv" id="u8R-dV-Gi7"/>
+                        <outlet property="urlTextField" destination="lJs-xp-m43" id="lPY-7t-vVd"/>
+                        <outlet property="view" destination="8bC-Xf-vdC" id="IAL-Qo-FTw"/>
+                        <outlet property="webView" destination="TxH-Sl-0bN" id="Oee-78-Ff8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="102.45535714285714"/>
+        </scene>
+    </scenes>
+</document>
