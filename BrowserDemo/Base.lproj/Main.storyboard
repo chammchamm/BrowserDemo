@@ -22,11 +22,17 @@
                                 <rect key="frame" x="20" y="46" width="40" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="btnBackClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5bg-le-et3"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11F-zh-4Bv">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11F-zh-4Bv" userLabel="Forward Button">
                                 <rect key="frame" x="337" y="46" width="64" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Forword"/>
+                                <connections>
+                                    <action selector="btnForwardClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CMb-8R-HdO"/>
+                                </connections>
                             </button>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TxH-Sl-0bN">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
@@ -61,8 +67,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="backButton" destination="11F-zh-4Bv" id="rZf-cq-pLD"/>
-                        <outlet property="forwardButton" destination="11F-zh-4Bv" id="u8R-dV-Gi7"/>
+                        <outlet property="backButton" destination="JuV-3w-sjj" id="Yeq-NA-LXL"/>
+                        <outlet property="forwardButton" destination="11F-zh-4Bv" id="bEM-ax-Apy"/>
                         <outlet property="urlTextField" destination="lJs-xp-m43" id="lPY-7t-vVd"/>
                         <outlet property="view" destination="8bC-Xf-vdC" id="IAL-Qo-FTw"/>
                         <outlet property="webView" destination="TxH-Sl-0bN" id="Oee-78-Ff8"/>
