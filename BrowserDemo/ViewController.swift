@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegate {
     
     
     @IBOutlet weak var backButton: UIButton!
@@ -17,11 +17,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var urlTextField: UITextField!
     @IBOutlet weak var webView: WKWebView!
     
+    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         urlTextField.delegate = self
+        webView.navigationDelegate = self
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -45,6 +48,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         
         return true
+    }
+    
+    @IBAction func btnForwardClicked(_ sender: UIButton) {
+        if webView.canGoForward {
+            webView.goForward()
+        }
+    }
+    
+    @IBAction func btnBackClicked(_ sender: UIButton) {
+        if webView.canGoBack {
+            webView.goBack()
+        }
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        backButton.isEnabled = webView.canGoBack
+        forwardButton.isEnabled = webView.canGoForward
+        
+        urlTextField.text = webView.url?.absoluteString
     }
 }
 
